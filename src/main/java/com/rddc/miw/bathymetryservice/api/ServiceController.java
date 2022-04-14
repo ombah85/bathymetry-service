@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ServiceController {
+
     @Value("${productUrl}")
     private String productUrl;
 
@@ -32,8 +33,8 @@ public class ServiceController {
     }
 
     @GetMapping("/productUrl")
-    public Product getProductUrl(){
-        return new Product(productUrl, productDescription);
+    public String getProductUrl(){
+        return productUrl;
     }
 
     @GetMapping("/productmetadata")
